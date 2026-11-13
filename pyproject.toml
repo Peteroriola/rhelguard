@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rhelguard"
+version = "0.1.0"
+description = "Read-only security posture auditing for RHEL 10"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "RHELGuard Contributors"}]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: POSIX :: Linux"]
+
+[project.scripts]
+rhelguard = "rhelguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

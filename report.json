@@ -1,0 +1,67 @@
+{
+  "tool": "rhelguard",
+  "version": "0.1.0",
+  "timestamp_utc": "2026-11-13T15:04:39.061694+00:00",
+  "hostname": "control.lab.example.com",
+  "platform": "Linux-6.12.0-264.16.1.el10_3.x86_64-x86_64-with-glibc2.39",
+  "score": 50,
+  "score_note": "Simple pass ratio; not a compliance certification",
+  "counts": {
+    "PASS": 3,
+    "FAIL": 2,
+    "WARN": 1,
+    "SKIP": 0,
+    "UNKNOWN": 1
+  },
+  "findings": [
+    {
+      "id": "SELINUX",
+      "title": "SELinux enforcing",
+      "status": "PASS",
+      "detail": "Runtime mode: Enforcing",
+      "recommendation": ""
+    },
+    {
+      "id": "FIREWALL",
+      "title": "Firewalld active",
+      "status": "PASS",
+      "detail": "firewalld.service: active",
+      "recommendation": ""
+    },
+    {
+      "id": "SSH_ROOT",
+      "title": "SSH root login disabled",
+      "status": "FAIL",
+      "detail": "permitrootlogin yes",
+      "recommendation": "Consider PermitRootLogin no after validating alternate administrative access"
+    },
+    {
+      "id": "SSH_PASSWORD",
+      "title": "SSH password auth disabled",
+      "status": "FAIL",
+      "detail": "passwordauthentication yes",
+      "recommendation": "Configure key-based access and test it before disabling password authentication"
+    },
+    {
+      "id": "UPDATES",
+      "title": "No pending security advisories",
+      "status": "WARN",
+      "detail": "3 unique RHSA advisories reported",
+      "recommendation": "Review advisories and schedule security updates"
+    },
+    {
+      "id": "AUDITD",
+      "title": "Audit daemon active",
+      "status": "PASS",
+      "detail": "auditd.service: active",
+      "recommendation": ""
+    },
+    {
+      "id": "PWQUALITY",
+      "title": "Password minlen >= 12",
+      "status": "UNKNOWN",
+      "detail": "No explicit minlen found; PAM enforcement and defaults not evaluated",
+      "recommendation": ""
+    }
+  ]
+}
